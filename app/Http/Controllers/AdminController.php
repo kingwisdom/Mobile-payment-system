@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Vendor;
+use App\Feedback;
 class AdminController extends Controller
 {
     //
@@ -18,5 +19,9 @@ class AdminController extends Controller
         return view('admin.feedback');
     }
 
-    
+    public function viewFeedback(){
+        $feedbacks = Feedback::all();
+        return view('admin.view_feedbacks',compact('feedbacks'));
+    }
 }
+ 

@@ -29,7 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/home', 'AdminController@index')->name('admin.home')->middleware('is_admin');
 
 //feedback route
-Route::get('view-feedback/', 'AdminController@feedback')->name('feedback')->middleware('is_admin');
+Route::get('view-feedback/', 'AdminController@viewFeedback')->name('feedback.view')->middleware('is_admin');
 Route::get('vendor/index', 'VendorController@index')->name('vendor.index')->middleware('is_admin');
 Route::get('vendor/create', 'VendorController@create')->name('vendor.create')->middleware('is_admin');
 Route::post('vendor/post', 'VendorController@post')->name('vendor.post')->middleware('is_admin');
